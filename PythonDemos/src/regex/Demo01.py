@@ -21,7 +21,23 @@ print re.findall(r, '01012345678')
 # 不匹配    print re.findall(r, '010--12345678')
 #    {m,n}：至少重复m次,最多重复n次
 #    在开头加r是对反斜杠不做特殊处理
+#    ()：代表分组
 
+s = '''hello src=java yes 
+no python 
+hello src=python yes
+ hadoop hbase hive'''
+r = r"hello src=.+ yes"
+print re.findall(r, s)
+#    ()优先获得里面的值
+r = r"hello src=(.+) yes"
+print re.findall(r, s)
+#    添加?非贪婪匹配
+s = '<H1>Chapter 1 - 介绍正则表达式</H1>'
+#    不加?则匹配所有
+#    .匹配单个字符
+r = r'<.*?>'
+print re.findall(r, s)
 
 
 
