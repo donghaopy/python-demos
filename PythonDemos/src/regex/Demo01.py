@@ -39,6 +39,9 @@ s = '<H1>Chapter 1 - 介绍正则表达式</H1>'
 r = r'<.*?>'
 print re.findall(r, s)
 
+#使用Eclipse Regex替换：$0代表匹配第几个分组
+#([0-9])、--->>>1$0
+
 
 
 
