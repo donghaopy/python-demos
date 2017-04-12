@@ -12,7 +12,8 @@
 
 7、深拷贝与浅拷贝：浅拷贝子对象地址没变化，深拷贝数据、地址空间都拷贝
 
-8、from multiprocessing import Pool：
+8、from multiprocessing import Pool：从multiprocessing模块中导入Pool模块，不会把multiprocessing整个模块都导入；
+  from ... import *：从模块中导入所有的内容
 
 9、Base64将任意一种二进制到文本字符串的编码方法，常用于在URL、Cookie、网页中传输少量二进制数据
 
@@ -24,3 +25,5 @@ a=1		id(a):查看内存地址命令	a=3
 12、raw_input:获得键盘输入
 
 13、pyc：编译后的文件；pyo：优化后的文件
+
+14、@staticmethod不需要表示自身对象的self和自身类的cls参数，就跟使用函数一样；@classmethod也不需要self参数，但第一个参数需要是表示自身类的cls参数
