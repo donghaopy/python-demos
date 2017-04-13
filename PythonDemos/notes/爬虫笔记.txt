@@ -1,0 +1,2 @@
+1、windows安装phantomjs：
+	将phantomjs.exe拷贝到Python的安装目录
