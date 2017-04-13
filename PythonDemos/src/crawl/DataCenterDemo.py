@@ -7,10 +7,16 @@ Created on 2017-4-12
 '''
 import urllib2
 import urllib
+import requests
+
+loginURL = 'http://localhost:8080/DC_161110/login.do'
+
+searchURL = 'http://localhost:8080/DC_161110/storeSearch.do'
+
+user = {'un':'admin', 'pa':'123456'}
+    
 # 登录
 def login():
-    loginURL = 'http://localhost:8080/DC_161110/login.do'
-    user = {'un':'user', 'pa':'123456'}
     # 编码
     data = urllib.urlencode(user)
     # print data
@@ -22,25 +28,28 @@ def login():
     # print response.getcode()
     # response是socket._fileobject对象
     # print response.read()
+    print jsession
     return jsession 
 
-# 查询    JSESSIONID=B079D76FDD9F91E8E854358EB7E6B076
+# 查询
 def search():
-    jsession = login()
-    print jsession
-    searchURL = 'http://localhost:8080/DC_161110/storeSearch.do'
     data = {'size':'50', 'fieldValue':'测试'}
     data = urllib.urlencode(data)
     header = {
-        'Cookie':jsession
+        'Cookie':requests_Login()
     }
     request = urllib2.Request(searchURL, data=data, headers=header)
-    print request
     response = urllib2.urlopen(request)
     print response.read()
+
+# 使用requests模块
+def requests_Login():
+    response = requests.post(loginURL, data=user)
+    for key, value in response.request._cookies.iteritems():
+        return '%s=%s' % (key, value)
+    
+# 查询成功
 search()
-
-
 
 
 
