@@ -27,3 +27,23 @@ a=1		id(a):查看内存地址命令	a=3
 13、pyc：编译后的文件；pyo：优化后的文件
 
 14、@staticmethod不需要表示自身对象的self和自身类的cls参数，就跟使用函数一样；@classmethod也不需要self参数，但第一个参数需要是表示自身类的cls参数
+
+15、yield的用法：yield相当于return，每次遇到yield就中断，下次又继续执行
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
