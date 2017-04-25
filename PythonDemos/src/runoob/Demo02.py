@@ -5,7 +5,7 @@ html字符转义
 @author: dh
 '''
 import HTMLParser
-html = '&lt;abc&gt;'
+html = '&#32534;&#30721;'
 #转义
 def parser():
     html_parser = HTMLParser.HTMLParser()

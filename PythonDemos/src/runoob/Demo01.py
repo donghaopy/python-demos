@@ -67,5 +67,10 @@ def parser(html):
     txt = html_parser.unescape(html) 
     return txt
 
-get_page()
+def test1():
+    response = requests.get('http://www.runoob.com/python/python-chinese-encoding.html')
+    file = open('d:/python-chinese-encoding.html', 'w')
+    file.write(response.text)
+    file.close()
+test1()
 
